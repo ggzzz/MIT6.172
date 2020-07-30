@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <stdint.h>
 
+#define PRINT_SIZE(a, b) printf("size of %s : %zu bytes \n", a, sizeof(b));
+
 int main() {
   // Please print the sizes of the following types:
   // int, short, long, char, float, double, unsigned int, long long
@@ -13,6 +15,22 @@ int main() {
   // Here's how to show the size of one type. See if you can define a macro
   // to avoid copy pasting this code.
   printf("size of %s : %zu bytes \n", "int", sizeof(int));
+  PRINT_SIZE("short", short);
+  PRINT_SIZE("long", long);
+  PRINT_SIZE("char", char);
+  PRINT_SIZE("float", float);
+  PRINT_SIZE("double", double);
+  PRINT_SIZE("unsigned int", unsigned int);
+  PRINT_SIZE("long long", long long);
+  PRINT_SIZE("uint8_t", uint8_t);
+  PRINT_SIZE("uint16_t", uint16_t);
+  PRINT_SIZE("uint32_t", uint32_t);
+  PRINT_SIZE("uint64_t", uint64_t);
+  PRINT_SIZE("uint_fast8_t", uint_fast8_t);
+  PRINT_SIZE("uint_fast16_t", uint_fast16_t);
+  PRINT_SIZE("uintmax_t", uintmax_t);
+  PRINT_SIZE("__int128", __int128);
+
   // e.g. PRINT_SIZE("int", int);
   //      PRINT_SIZE("short", short);
 
@@ -35,6 +53,7 @@ int main() {
 
   // Array declaration. Use your macro to print the size of this.
   int x[5];
+  PRINT_SIZE("x", x);
 
   // You can just use your macro here instead: PRINT_SIZE("student", you);
   printf("size of %s : %zu bytes \n", "student", sizeof(you));
