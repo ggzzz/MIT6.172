@@ -5,6 +5,7 @@
 #include <stdint.h>
 
 #define PRINT_SIZE(a, b) printf("size of %s : %zu bytes \n", a, sizeof(b));
+#define PRINT_POINTER_SIZE(a, b) printf("size of %s : %zu bytes \n", a, sizeof(b))
 
 int main() {
   // Please print the sizes of the following types:
@@ -29,7 +30,26 @@ int main() {
   PRINT_SIZE("uint_fast8_t", uint_fast8_t);
   PRINT_SIZE("uint_fast16_t", uint_fast16_t);
   PRINT_SIZE("uintmax_t", uintmax_t);
+  PRINT_SIZE("intmax_t", intmax_t);
   PRINT_SIZE("__int128", __int128);
+
+  PRINT_POINTER_SIZE("int*", int*);
+  PRINT_POINTER_SIZE("short*", short*);
+  PRINT_POINTER_SIZE("long*", long*);
+  PRINT_POINTER_SIZE("char*", char*);
+  PRINT_POINTER_SIZE("float*", float*);
+  PRINT_POINTER_SIZE("double*", double*);
+  PRINT_POINTER_SIZE("unsigned int*", unsigned int*);
+  PRINT_POINTER_SIZE("long long*", long long*);
+  PRINT_POINTER_SIZE("uint8_t*", uint8_t*);
+  PRINT_POINTER_SIZE("uint16_t*", uint16_t*);
+  PRINT_POINTER_SIZE("uint32_t*", uint32_t*);
+  PRINT_POINTER_SIZE("uint64_t*", uint64_t*);
+  PRINT_POINTER_SIZE("uint_fast8_t*", uint_fast8_t*);
+  PRINT_POINTER_SIZE("uint_fast16_t*", uint_fast16_t*);
+  PRINT_POINTER_SIZE("uintmax_t*", uintmax_t*);
+  PRINT_POINTER_SIZE("intmax_t*", intmax_t*);
+  PRINT_POINTER_SIZE("__int128*", sizeof(__int128*));
 
   // e.g. PRINT_SIZE("int", int);
   //      PRINT_SIZE("short", short);
@@ -54,9 +74,10 @@ int main() {
   // Array declaration. Use your macro to print the size of this.
   int x[5];
   PRINT_SIZE("x", x);
+  PRINT_POINTER_SIZE("&x", &x);
 
   // You can just use your macro here instead: PRINT_SIZE("student", you);
   printf("size of %s : %zu bytes \n", "student", sizeof(you));
-
+  PRINT_POINTER_SIZE("student*", &you);
   return 0;
 }
