@@ -45,7 +45,7 @@ matrix* make_matrix(int rows, int cols) {
   // Allocate a buffer big enough to hold the matrix.
   new_matrix->values = (int**)malloc(sizeof(int*) * rows);
   for (int i = 0; i < rows; i++) {
-    new_matrix->values[i] = (int*)malloc(sizeof(int) * cols);
+    new_matrix->values[i] = (int*)calloc(cols, sizeof(int));
   }
 
   return new_matrix;
